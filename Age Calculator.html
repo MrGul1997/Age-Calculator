@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Age calculator</title>
+    <style>
+    html,body{
+        margin: 0;
+        padding: 0;
+        /* background-color: aqua; */
+        background-image: url(a.jpg);
+        background-size: cover;
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: center;
+        align-items: center;
+        height:100vh;
+        width:100%;
+    }
+
+    .design{
+        height: 3vh;
+        width: 45vh;
+        background:transparent;
+        border:1px solid black;
+        padding-left:20px;
+        padding-top:1vh;
+        outline:none;
+        border-radius:20px;
+        color:black;
+        margin-bottom: 20px;
+    }
+    ::placeholder{
+        color:orange;
+        font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+    <!-- <h1 id="hd">pakistan</h1>
+    <button id="btn" onclick="myfunction()">click</button> -->
+    <div class="con">
+    <input type="text" id="age" class="design" placeholder="Enter the age">
+    <button onclick="calage()">calculate</button>
+
+    <div class="totalday design" >Total Days</div>
+    <div class="totalweeks design">Total Weeks</div>
+    <div class="totalmonths design">Total Months</div>
+    <div class="totalmins design">Total Mins</div>
+    <div class="totalsec design">Total Seconds</div>
+    <div class="heartbeats design">Total heartbeats</div>
+    <div class="criteria design">Eligible/Not Eligible</div>
+
+</div>
+
+
+</body>
+<script>
+    // var i=1
+    // function myfunction(){
+    //     if(i==1){
+    //     document.getElementById("hd").style.visibility="hidden"
+    //     document.getElementById("btn").innerHTML="show"
+    //     i=0;
+    // }
+    // else if(i==0){
+    //     document.getElementById("hd").style.visibility="visible"
+    //     document.getElementById("btn").innerHTML="hide"
+    //     i=1
+    // }
+    // }
+    
+        function calage(){
+            var x = document.getElementById("age").value;
+            d=x*365;
+            w=x*54;
+            m=x*12;
+            min=x*365*24*60;
+            sec=x*365*24*3600;
+            h=x*365*24*60*72;
+            if (x>=18 && x<=26){
+                document.getElementsByClassName('criteria')[0].innerHTML=(` your age is ${x} and you are elligble`)
+            }
+             else {
+                document.getElementsByClassName('criteria')[0].innerHTML=(` your age is ${x} and you are not elligble`)
+             }
+            document.getElementsByClassName("totalday")[0].innerHTML=(`${d} Total Days of your age.`)
+            document.getElementsByClassName("totalweeks")[0].innerHTML=(`${w} Total Weeks of your age.`)
+            document.getElementsByClassName("totalmonths")[0].innerHTML=(`${m} Total Months of your age.`)
+            document.getElementsByClassName("totalmins")[0].innerHTML=(`${min} Total Mins of your age.`)
+            document.getElementsByClassName("totalsec")[0].innerHTML=(`${sec} Total Seconds of your age.`)    
+            document.getElementsByClassName("heartbeats")[0].innerHTML=(`${h} Total Heartbeats of your age.`)
+               
+
+
+
+          
+            // document.getElementsByClassName('criteria')[0].innerHTML=(`${n} You are Not Eligible for this post.`)
+
+            // if (x>=18 && x<=26){
+            //     alert('You are Eligible for This Post');
+            // }
+
+            // else {
+            //     alert('You are not Eligible for this post.')
+            // }
+        }
+
+</script>
+</html>
